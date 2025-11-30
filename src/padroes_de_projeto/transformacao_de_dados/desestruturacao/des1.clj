@@ -1,4 +1,4 @@
-(ns padroes-de-projeto.desestruturacao.des1
+(ns padroes-de-projeto.transformacao-de-dados.desestruturacao.des1
   (:use clojure.pprint))
 
 (defn process-user-data [user]

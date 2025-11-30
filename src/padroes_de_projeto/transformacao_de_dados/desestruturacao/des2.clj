@@ -1,4 +1,4 @@
-(ns padroes-de-projeto.desestruturacao.des2
+(ns padroes-de-projeto.transformacao-de-dados.desestruturacao.des2
   (:require [clojure.core.match :as match]))
 
 (defn process-user-data-match [user]

@@ -1,4 +1,4 @@
-(ns padroes-de-projeto.desestruturacao.des3
+(ns padroes-de-projeto.transformacao-de-dados.desestruturacao.des3
   (:use clojure.pprint)
   (:import (java.security.interfaces DSAPublicKey)))
 

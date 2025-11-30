@@ -1,4 +1,4 @@
-(ns padroes-de-projeto.transformacao-de-dados.mapear-filtrar-reduzir.mfr1)
+(ns padroes-de-projeto.transformacao-de-dados.mapear-reduzir-filtrar.mrf)
 
 (defn sum [numbers]
   (println "Somamdo Coleções")
@@ -38,17 +38,18 @@
 (defn gt-10? [x] (> x 10))
 (defn lt-5? [x] (< x 5))
 
-(defn incr [] (+ x 1))
-(defn decr [] (- x 1))
+(defn incr [x] (+ x 1))
+(defn decr [x] (- x 1))
 
 (def sample-data [3 7 11 2 15 6])
 
 (def transformed-data
   (conditional-transform
-    [ [gt-10? decr]
-      [lt-5? incr] ]
+    [[gt-10? decr]
+     [lt-5? incr]]
     sample-data))
 (println transformed-data)
+
 
 
 
