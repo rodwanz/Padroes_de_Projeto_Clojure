@@ -23,42 +23,37 @@
     (/ sum count)))
 (println (average [10 20 30 40 50]))
 
-(defn conditional-transform [pred-fn transforn-map data]
-  ((println "Mapeamento Condicional")
-   (map (fn [item]
-          (let [transform-fn (first (filter
-                                      (fn [[pred _]]
-                                        (pred item))
-                                      transforn-map))]
-            (if transform-fn
-              ((second transform-fn) item)
-              item)))
-        data)))
+(defn conditional-reduce [coll]
+  (println "Reduções condicionais")
+  (reduce (fn [acc x]
+            (if (even? x)
+              (+ acc x) acc))
+          0
+          coll))
 
-(defn gt-10? [x] (> x 10))
-(defn lt-5? [x] (< x 5))
-
-(defn incr [x] (+ x 1))
-(defn decr [x] (- x 1))
-
-(def sample-data [3 7 11 2 15 6])
-
-(def transformed-data
-  (conditional-transform
-    [[gt-10? decr]
-     [lt-5? incr]]
-    sample-data))
-(println transformed-data)
+(println (conditional-reduce [1 2 3 4 5 6 7 8 9 10]))
 
 
+(defn sum-of-list [numbers]
+  (println "Redução cumulativa")
+  (reduce + 0 numbers))
+
+(def nums [1 2 3 4 5])
+  (println (sum-of-list nums))
 
 
+(defn multiply-positives
+  "Redutor personalizado para multiplicar apenas os números positivos em uma coleção."
+  [accumalator item]
+  (println "Redutores personalizados")
+  (if (pos? item)
+    (* accumalator item)
+    accumalator))
 
+(defn reduce-produtive-product [coll]
+  (reduce multiply-positives 1 coll))
 
-
-
-
-
+(println (reduce-produtive-product [1 -2 3 -4 5]))
 
 
 
