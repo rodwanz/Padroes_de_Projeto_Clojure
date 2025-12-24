@@ -29,5 +29,20 @@
        (map #(* % %))))
 (println (filter-map-combo numbers))
 
+(println "\nFiltrar")
 
+(defn even-numbers [nums]
+  (println "Filtragem de dados")
+  (filter even? nums))
+(println (even-numbers [1 2 3 4 5 6 7 8 9 10]))
+
+(println "\nMapeamento plano")
+
+(defn flat-map [f coll]
+  (println "Mapeamento plano")
+  (apply concat (map f coll)))
+
+(def nested-coll [[1 2] [3 4] [5 6]])
+
+(println (flat-map (fn [x] (map inc x)) nested-coll))
 
